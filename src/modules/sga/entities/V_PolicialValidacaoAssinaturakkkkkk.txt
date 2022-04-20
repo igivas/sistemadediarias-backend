@@ -1,0 +1,50 @@
+import { ViewColumn, ViewEntity } from 'typeorm';
+
+@ViewEntity({
+  expression: `
+      SELECT "p"."pm_codigo", "g"."gra_nome", "p"."pm_apelido", "p"."uni_codigo", "v"."id_validacao",
+      CASE
+        WHEN "v"."status" = "2" THEN "VALIDADO"
+        ELSE "NÃO VALIDADOddbdfbdf"
+      END AS "validacao",
+      CASE
+        WHEN "v"."id_validacao" IS NULL THEN "NÃO POSSUI"
+        ELSE "POSSUI"
+      END AS "assinatura"
+      FROM "pessoa_pm" "p"
+      LEFT JOIN "sga"."validacoes" "v" ON "p"."pm_codigo" = "v"."pes_codigo" AND "v"."status" = "2"
+      JOIN "graduacao" "g" ON "p"."gra_codigo" = "g"."gra_codigo"
+      LEFT JOIN "sga"."assinaturas" "a" ON "a"."id_validacao" = "v"."id_validacao"
+      LEFT JOIN "unidade" "u" ON "p"."uni_codigo" = "u"."uni_codigo"
+      WHERE "p"."pts_codigo" = 1
+      ORDER BY "g"."gra_prioridade", "p"."pm_codigo";
+
+  `,
+})
+class VPolicialValidacaoAssinaturakkk {
+  @ViewColumn()
+  pm_codigo: string;
+
+  @ViewColumn()
+  gra_nome: string;
+
+  @ViewColumn()
+  pm_apelido: string;
+
+  @ViewColumn()
+  uni_codigo: number;
+
+  @ViewColumn()
+  uni_superior: number;
+
+  @ViewColumn()
+  id_validacao: number;
+
+  @ViewColumn()
+  validacao: string;
+
+  @ViewColumn()
+  assinatura: string;
+}
+
+export default VPolicialValidacaoAssinaturakkk;

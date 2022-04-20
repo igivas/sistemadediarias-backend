@@ -1,0 +1,17 @@
+node_modules
+.idea/
+dist/
+
+temp/
+.env
+ormconfig.js
+ormconfig.ts
+
+*.log
+
+
+/documentos/*
+
+
+tmp/upload/*
+!tmp/upload/.gitkeep

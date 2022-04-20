@@ -1,0 +1,59 @@
+<style>
+  .message-content {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 800px;
+    font-size: 18px;
+    line-height: 21px;
+    margin-top: 16px;
+
+  }
+
+  .codigo-validacao {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.3em;
+
+  }
+
+  hr {
+    height: 8px;
+    margin-top: 16px;
+    background-color: #FF6A14;
+    border: none;
+    margin-bottom: 0;
+  }
+
+  .botton-green {
+    height: 30px;
+    width: 100%;
+    background-color: #009739;
+    margin-top: 4px;
+  }
+
+  .image-container {
+    width: 100%;
+    text-align: center;
+
+  }
+
+  img {
+    height: 80px;
+  }
+</style>
+<div class="image-container">
+  {{!-- <img src="http://localhost:3333/images/brasao-pmce.png" alt="logo pmce"> --}}
+</div>
+<div class="message-content">
+
+  <p>Senhor Policial,</p>
+  <p>Seque abaixo o códido de validação de email:</p>
+  <p class="codigo-validacao">{{codigo}}</p>
+  <p>
+    Célula de Tecnologia da Informação e Comunicação da PMCE
+  </p>
+
+</div>
+<hr />
+<div class="botton-green">
+
+</div>
